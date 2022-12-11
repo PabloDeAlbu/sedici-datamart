@@ -1,0 +1,4 @@
+version: '3.7'
+services:
+  flyway:
+    command: -url=jdbc:postgresql://${DWH_HOST}:${DWH_PORT}/${DWH_DB} -user=${DWH_USER} -password=${DWH_PASSWORD} repair

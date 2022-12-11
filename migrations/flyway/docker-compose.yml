@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  flyway:
+    image: flyway/flyway
+    container_name: ${PROJECT_NAME}_flyway
+    volumes:
+     - ./conf:/flyway/conf
+     - ./drivers:/flyway/drivers
+     - ./sql:/flyway/sql
+networks:
+  default:
+    external: true
+    name: ${PROJECT_NAME}_network
