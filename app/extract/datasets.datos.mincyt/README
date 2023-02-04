@@ -1,0 +1,5 @@
+mkdir raw/fuente/datasets.datos.mincyt/$DATASET
+cp downloader.sh raw/fuente/datasets.datos.mincyt/$DATASET
+wget de cada link con "*.css" dentro de https://datasets.datos.mincyt.gob.ar/dataset/$DATASET
+
+https://datasets.datos.mincyt.gob.ar/dataset/personal-de-ciencia-y-tecnologia

@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  app:
+    container_name: ${PROJECT_NAME}_extract_scopus
+    volumes:
+      - ./app/scopus:/app/scopus
+      - ./app/scopus/config:/root/.pybliometrics
+    entrypoint: python3
+    command:
+      - "/app/scopus/extract.py"

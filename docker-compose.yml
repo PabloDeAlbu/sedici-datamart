@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${PROJECT_NAME}_app
+    volumes:
+      - ${DATA_DIR:-./data/}:/data/
+    entrypoint: python3
+    command:
+      - "/app/example/extract.py"

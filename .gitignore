@@ -1,1 +1,12 @@
 config/scopus_config.ini
+env/
+
+.aux/
+
+data/raw/*
+data/parquet/*
+!data/raw/README
+!data/parquet/README
+
+/app/settings.ini
+__pycache__/
