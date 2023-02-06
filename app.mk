@@ -14,7 +14,7 @@ debug:
 
 base-extractor:
 	docker build -t base-extractor app/extract/.base
-	docker run -it --rm --name ckan-extract -v $(PWD)/app/extract/.base:/usr/src/extractor -w /usr/src/extractor ckan-extract python extractor.py
+	docker run -it --rm --name base-extract -v $(PWD)/app/extract/.base:/usr/src/extractor -w /usr/src/extractor base-extractor python extractor.py
 
 scopus-extract:
 	python3 app/etl/scopus/extract.py
