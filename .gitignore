@@ -1,6 +1,9 @@
 config/scopus_config.ini
 env/
 
+app/extract/*/data/
+!app/extract/*/data/README
+
 .aux/
 
 data/raw/*
