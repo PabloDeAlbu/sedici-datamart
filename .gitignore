@@ -1,8 +1,8 @@
 config/scopus_config.ini
 env/
 
-app/extract/*/data/
-!app/extract/*/data/README
+app/*/*/data/
+!app/*/*/data/README
 
 .aux/
 
