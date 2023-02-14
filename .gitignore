@@ -4,6 +4,15 @@ env/
 app/*/*/data/
 !app/*/*/data/README
 
+load/*/data/
+!load/*/data/README
+
+transform/*/data/
+!transform/*/data/README
+
+validation/*/data/
+!validation/*/data/README
+
 .aux/
 
 data/raw/*
