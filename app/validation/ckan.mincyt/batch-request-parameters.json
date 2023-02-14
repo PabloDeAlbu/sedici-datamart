@@ -1,0 +1,7 @@
+{
+  "datasource_name": "organizaciones_mincyt", 
+  "data_connector_name": "default_inferred_data_connector_name", 
+  "data_asset_name": "organizaciones.csv", 
+  "batch_spec_passthrough": {"reader_options": {"sep": ";"}},
+  "limit": 1000
+}
