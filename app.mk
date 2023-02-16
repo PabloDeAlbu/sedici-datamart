@@ -1,5 +1,6 @@
 
 .PHONY: example
+
 example:
 	@docker-compose run app
 
@@ -25,3 +26,7 @@ down-scopus:
 
 build-scopus:
 	@docker-compose -f docker-compose.yml -f app/scopus/docker-compose.yml build
+
+load-dim_institution:
+	@echo "Starting up  DataWarehouse containers for $(PROJECT_NAME)"
+	@docker-compose -f docker/postgres/docker-compose.yml -f load/dim_institution/docker-compose.yml up -d
