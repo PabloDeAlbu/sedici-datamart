@@ -7,9 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: ${PROJECT_NAME}_app
     command:
-      - "bash"
-      - "-c"
-      - "echo hola"
+      - "python"
+      - "loader.py"
 
 networks:
   default:

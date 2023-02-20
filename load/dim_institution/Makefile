@@ -1,7 +1,7 @@
 TABLE_NAME=dim_institution
 
 up:
-	@docker run -it --rm --name do_load_${TABLE_NAME} -v ${PWD}/data:/usr/src/app/data -w /usr/src/app ${TABLE_NAME}-loader python loader.py
+	@docker run -it --rm --network=sedici_dw_network --name do_load_${TABLE_NAME} -v ${PWD}/data:/usr/src/app/data -w /usr/src/app ${TABLE_NAME}-loader python loader.py
 
 bash:
 	@docker run -it --rm --name do_load_${TABLE_NAME} -v ${PWD}/data:/usr/src/app/data -w /usr/src/app ${TABLE_NAME}-loader bash
