@@ -68,14 +68,16 @@ for i in int_columns:
 
 df = df.astype(convert_dict)
 
-# El nombre del menor de los hijos será el nombre de la institución
+# # El nombre del menor de los hijos será el nombre de la institución
+
 df['name'] = 'No Informado'
-for i in range(6, 0 , -1):
-    descr_col = f'sicytar_institucion_nivel{i}_descripcion'
-    df_n = df[['name', descr_col]]
-    df_n.loc[df[descr_col] != "No Informado",'name'] = df_n[descr_col]
-     
-df['name'] = df_n['name']
+
+df.loc[df['sicytar_nivel'] == 1, 'name'] = df['sicytar_institucion_nivel1_descripcion']
+df.loc[df['sicytar_nivel'] == 2, 'name'] = df['sicytar_institucion_nivel2_descripcion']
+df.loc[df['sicytar_nivel'] == 3, 'name'] = df['sicytar_institucion_nivel3_descripcion']
+df.loc[df['sicytar_nivel'] == 4, 'name'] = df['sicytar_institucion_nivel4_descripcion']
+df.loc[df['sicytar_nivel'] == 5, 'name'] = df['sicytar_institucion_nivel5_descripcion']
+df.loc[df['sicytar_nivel'] == 6, 'name'] = df['sicytar_institucion_nivel6_descripcion']
 
 parquet_engine = 'pyarrow'
 df.to_parquet(f'{STAGING_DIR}/dim_institution.parquet.gzip', engine = parquet_engine, compression='gzip')
