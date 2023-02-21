@@ -68,5 +68,14 @@ for i in int_columns:
 
 df = df.astype(convert_dict)
 
+# El nombre del menor de los hijos será el nombre de la institución
+df['name'] = 'No Informado'
+for i in range(6, 0 , -1):
+    descr_col = f'sicytar_institucion_nivel{i}_descripcion'
+    df_n = df[['name', descr_col]]
+    df_n.loc[df[descr_col] != "No Informado",'name'] = df_n[descr_col]
+     
+df['name'] = df_n['name']
+
 parquet_engine = 'pyarrow'
-df.to_parquet(f'{STAGING_DIR}/dim_institution_{date.today()}.parquet.gzip', engine = parquet_engine, compression='gzip')
+df.to_parquet(f'{STAGING_DIR}/dim_institution.parquet.gzip', engine = parquet_engine, compression='gzip')
