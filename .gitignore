@@ -1,5 +1,5 @@
 config/scopus_config.ini
-env/
+.venv/
 
 app/*/*/data/
 !app/*/*/data/README
